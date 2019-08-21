@@ -1,0 +1,23 @@
+#N canvas 961 67 958 1012 10;
+#X floatatom 168 31 5 0 0 0 - - -, f 5;
+#X obj 88 124 * 400;
+#X obj 180 127 * 600;
+#X obj 247 147 print b;
+#X obj 118 163 print a;
+#X obj 126 238 *~ 0.5;
+#X obj 135 301 dac~;
+#X obj 46 174 phasor~;
+#X obj 182 172 phasor~;
+#X msg 290 269 This is a "perfect fith" due to the 3:2 ratio in pitch
+between the two sounds;
+#X text 285 77 comment;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 1 0 7 0;
+#X connect 2 0 3 0;
+#X connect 2 0 8 0;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
