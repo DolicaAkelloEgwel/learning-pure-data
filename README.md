@@ -3,7 +3,7 @@ Some programs I have made on my quest to learn Pure Data and Sound Synthesis.
 ## Material Covered
 ### Learning Synthesis with Pure Data  - Series 1
 Course Link: http://www.lwmmusic.com/learning-lswpd-1.html
-- ~~Lesson 01 - Digital Synthesis Basics~~ [Completed idk]
+- ~~Lesson 01 - Digital Synthesis Basics~~ [Completed 19/09/19]
 - ~~Lesson 02 - Overtones, Harmonics, and Partials~~ [Completed 19/09/19]
 - Lesson 03 - Wave Shaping and Phasing
 - Lesson 04 - Making a MIDI Input Module
