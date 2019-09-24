@@ -1,6 +1,6 @@
 # Learning Pure Data/Sound Synthesis
 Some programs I have made on my quest to learn Pure Data and Sound Synthesis.
-## Material Covered
+## Study Material
 ### Learning Synthesis with Pure Data  - Series 1
 Course Link: http://www.lwmmusic.com/learning-lswpd-1.html
 - ~~Lesson 01 - Digital Synthesis Basics~~ [Completed 19/09/19]
