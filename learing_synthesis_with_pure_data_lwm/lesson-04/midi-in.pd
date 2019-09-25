@@ -1,0 +1,46 @@
+#N canvas 965 74 946 997 10;
+#X obj 101 101 cnv 15 298 148 empty empty MIDI_IN 20 12 0 14 -233017
+-66577 0;
+#X obj 123 137 hsl 128 15 0 127 0 0 \$0-note-send \$0-note-recv Note:39
+2 8 0 10 -99865 -1 -262144 0 1;
+#X obj 123 162 hsl 128 15 0 127 0 0 \$0-velocity-send \$0-velocity-recv
+Velocity:43 2 8 0 10 -99865 -1 -262144 0 1;
+#X obj 280 117 vsl 15 128 0 168384 0 0 \$0-pbend-send \$0-pbend-recv
+PB:103417 0 -9 0 10 -99865 -1 -1 0 1;
+#X obj 342 117 vsl 15 128 0 127 0 0 \$0-mod-send \$0-mod-recv PB:103417
+0 -9 0 10 -99865 -1 -1 0 1;
+#N canvas 965 74 946 997 send-receive 0;
+#X obj 48 31 r \$0-note-send;
+#X obj 48 87 s \$0-note-recv;
+#X obj 159 31 r \$0-velocity-send;
+#X obj 159 87 s \$0-velocity-recv;
+#X msg 48 59 label Note:\$1;
+#X msg 159 59 label Velocity:\$1;
+#X obj 48 115 r \$0-pbend-send;
+#X msg 48 143 label PB:\$1;
+#X obj 48 171 s \$0-pbend-recv;
+#X obj 159 115 r \$0-mod-send;
+#X msg 159 143 label Mod:\$1;
+#X obj 159 171 s \$0-mod-recv;
+#X connect 0 0 4 0;
+#X connect 2 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X restore 167 395 pd send-receive;
+#X obj 508 90 notein;
+#X floatatom 468 143 5 0 0 0 Note - -;
+#X floatatom 562 143 5 0 0 0 Velocity - -;
+#X floatatom 653 143 5 0 0 0 Channel - -;
+#X obj 193 118 nbx 2 14 1 16 0 0 empty empty Channel 0 -8 0 10 -99865
+-1 -1 1 256;
+#X obj 486 359 sel 1;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 6 2 9 0;
+#X connect 9 0 11 0;
+#X connect 10 0 11 1;
+#X coords 0 -1 1 1 300 150 2 100 100;
