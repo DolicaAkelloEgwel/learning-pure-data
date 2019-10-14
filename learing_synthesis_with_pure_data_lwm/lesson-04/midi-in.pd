@@ -1,12 +1,12 @@
 #N canvas 9 74 946 997 10;
 #X obj 101 101 cnv 15 298 148 empty empty MIDI_IN 20 12 0 14 -233017
 -66577 0;
-#X obj 123 137 hsl 128 15 0 127 0 0 \$0-note-send \$0-note-recv Note:39
-2 8 0 10 -99865 -1 -262144 0 1;
+#X obj 123 137 hsl 128 15 0 127 0 0 \$0-note-send \$0-note-recv Note:41
+2 8 0 10 -99865 -1 -262144 4100 1;
 #X obj 123 162 hsl 128 15 0 127 0 0 \$0-velocity-send \$0-velocity-recv
-Velocity:43 2 8 0 10 -99865 -1 -262144 0 1;
-#X obj 280 117 vsl 15 128 0 168384 0 0 \$0-pbend-send \$0-pbend-recv
-PB:103417 0 -9 0 10 -99865 -1 -1 0 1;
+Velocity:0 2 8 0 10 -99865 -1 -262144 0 1;
+#X obj 280 117 vsl 15 128 0 16384 0 0 \$0-pbend-send \$0-pbend-recv
+PB:8192 0 -9 0 10 -99865 -1 -1 6350 1;
 #X obj 342 117 vsl 15 128 0 127 0 0 \$0-mod-send \$0-mod-recv PB:103417
 0 -9 0 10 -99865 -1 -1 0 1;
 #N canvas 965 74 946 997 send-receive 0;
@@ -30,7 +30,7 @@ PB:103417 0 -9 0 10 -99865 -1 -1 0 1;
 #X connect 7 0 8 0;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
-#X restore 167 395 pd send-receive;
+#X restore 408 625 pd send-receive;
 #X obj 508 90 notein;
 #X floatatom 468 143 5 0 0 0 Note - -;
 #X floatatom 562 143 5 0 0 0 Velocity - -;
@@ -44,6 +44,26 @@ PB:103417 0 -9 0 10 -99865 -1 -1 0 1;
 #X msg 687 443 0;
 #X obj 468 475 spigot 1;
 #X obj 562 557 spigot 1;
+#X obj 116 403 pack f f f f;
+#X obj 108 443 outlet;
+#X obj 277 344 t b f;
+#X obj 215 319 t b f;
+#X obj 162 319 t b f;
+#X obj 708 588 bendin;
+#X floatatom 766 652 5 0 0 0 Channel - -;
+#X floatatom 670 649 5 0 0 0 Value - -;
+#X obj 678 748 sel 1;
+#X msg 680 786 1;
+#X floatatom 727 782 5 0 0 0 - - -;
+#X obj 727 812 t b;
+#X msg 728 850 0;
+#X obj 620 875 spigot 1;
+#X obj 248 22 loadbang;
+#X msg 275 50 8192;
+#X connect 1 0 18 0;
+#X connect 2 0 22 0;
+#X connect 3 0 21 0;
+#X connect 4 0 20 0;
 #X connect 6 0 7 0;
 #X connect 6 1 8 0;
 #X connect 6 2 9 0;
@@ -61,4 +81,25 @@ PB:103417 0 -9 0 10 -99865 -1 -1 0 1;
 #X connect 15 0 17 1;
 #X connect 16 0 1 0;
 #X connect 17 0 2 0;
+#X connect 18 0 19 0;
+#X connect 20 0 18 0;
+#X connect 20 1 18 3;
+#X connect 21 0 18 0;
+#X connect 21 1 18 2;
+#X connect 22 0 18 0;
+#X connect 22 1 18 1;
+#X connect 23 0 25 0;
+#X connect 23 1 24 0;
+#X connect 24 0 26 0;
+#X connect 25 0 31 0;
+#X connect 26 0 27 0;
+#X connect 26 1 28 0;
+#X connect 27 0 31 1;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 1;
+#X connect 31 0 3 0;
+#X connect 32 0 10 0;
+#X connect 32 0 33 0;
+#X connect 33 0 3 0;
 #X coords 0 -1 1 1 300 150 2 100 100;
