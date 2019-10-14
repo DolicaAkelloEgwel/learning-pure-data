@@ -1,4 +1,4 @@
-#N canvas 965 74 946 997 10;
+#N canvas 9 74 946 997 10;
 #X obj 101 101 cnv 15 298 148 empty empty MIDI_IN 20 12 0 14 -233017
 -66577 0;
 #X obj 123 137 hsl 128 15 0 127 0 0 \$0-note-send \$0-note-recv Note:39
@@ -37,10 +37,28 @@ PB:103417 0 -9 0 10 -99865 -1 -1 0 1;
 #X floatatom 653 143 5 0 0 0 Channel - -;
 #X obj 193 118 nbx 2 14 1 16 0 0 empty empty Channel 0 -8 0 10 -99865
 -1 -1 1 256;
-#X obj 486 359 sel 1;
+#X obj 637 341 sel 1;
+#X msg 639 379 1;
+#X floatatom 686 375 5 0 0 0 - - -;
+#X obj 686 405 t b;
+#X msg 687 443 0;
+#X obj 468 475 spigot 1;
+#X obj 562 557 spigot 1;
 #X connect 6 0 7 0;
 #X connect 6 1 8 0;
 #X connect 6 2 9 0;
+#X connect 7 0 16 0;
+#X connect 8 0 17 0;
 #X connect 9 0 11 0;
 #X connect 10 0 11 1;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 12 0 16 1;
+#X connect 12 0 17 1;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 1;
+#X connect 15 0 17 1;
+#X connect 16 0 1 0;
+#X connect 17 0 2 0;
 #X coords 0 -1 1 1 300 150 2 100 100;
