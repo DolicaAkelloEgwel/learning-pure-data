@@ -1,14 +1,14 @@
 #N canvas 9 74 946 997 10;
 #X obj 101 101 cnv 15 298 148 empty empty MIDI_IN 20 12 0 14 -233017
 -66577 0;
-#X obj 123 137 hsl 128 15 0 127 0 0 \$0-note-send \$0-note-recv Note:41
-2 8 0 10 -99865 -1 -262144 4100 1;
+#X obj 123 137 hsl 128 15 0 127 0 0 \$0-note-send \$0-note-recv Note:42
+2 8 0 10 -99865 -1 -262144 4200 1;
 #X obj 123 162 hsl 128 15 0 127 0 0 \$0-velocity-send \$0-velocity-recv
 Velocity:0 2 8 0 10 -99865 -1 -262144 0 1;
 #X obj 280 117 vsl 15 128 0 16384 0 0 \$0-pbend-send \$0-pbend-recv
 PB:8192 0 -9 0 10 -99865 -1 -1 6350 1;
-#X obj 342 117 vsl 15 128 0 127 0 0 \$0-mod-send \$0-mod-recv PB:103417
-0 -9 0 10 -99865 -1 -1 0 1;
+#X obj 342 117 vsl 15 128 0 127 0 0 \$0-mod-send \$0-mod-recv Mod:127
+0 -9 0 10 -99865 -1 -1 12700 1;
 #N canvas 965 74 946 997 send-receive 0;
 #X obj 48 31 r \$0-note-send;
 #X obj 48 87 s \$0-note-recv;
@@ -49,17 +49,26 @@ PB:8192 0 -9 0 10 -99865 -1 -1 6350 1;
 #X obj 277 344 t b f;
 #X obj 215 319 t b f;
 #X obj 162 319 t b f;
-#X obj 708 588 bendin;
-#X floatatom 766 652 5 0 0 0 Channel - -;
-#X floatatom 670 649 5 0 0 0 Value - -;
-#X obj 678 748 sel 1;
-#X msg 680 786 1;
-#X floatatom 727 782 5 0 0 0 - - -;
-#X obj 727 812 t b;
-#X msg 728 850 0;
-#X obj 620 875 spigot 1;
+#X obj 798 253 bendin;
+#X floatatom 856 317 5 0 0 0 Channel - -;
+#X floatatom 760 314 5 0 0 0 Value - -;
+#X obj 768 413 sel 1;
+#X msg 770 451 1;
+#X floatatom 817 447 5 0 0 0 - - -;
+#X obj 817 477 t b;
+#X msg 818 515 0;
+#X obj 710 540 spigot 1;
 #X obj 248 22 loadbang;
 #X msg 275 50 8192;
+#X floatatom 1030 305 5 0 0 0 Channel - -;
+#X floatatom 934 302 5 0 0 0 Value - -;
+#X obj 942 401 sel 1;
+#X msg 944 439 1;
+#X floatatom 991 435 5 0 0 0 - - -;
+#X obj 991 465 t b;
+#X msg 992 503 0;
+#X obj 884 528 spigot 1;
+#X obj 972 241 ctlin 1;
 #X connect 1 0 18 0;
 #X connect 2 0 22 0;
 #X connect 3 0 21 0;
@@ -71,6 +80,8 @@ PB:8192 0 -9 0 10 -99865 -1 -1 6350 1;
 #X connect 8 0 17 0;
 #X connect 9 0 11 0;
 #X connect 10 0 11 1;
+#X connect 10 0 26 1;
+#X connect 10 0 36 1;
 #X connect 11 0 12 0;
 #X connect 11 1 13 0;
 #X connect 12 0 16 1;
@@ -102,4 +113,15 @@ PB:8192 0 -9 0 10 -99865 -1 -1 6350 1;
 #X connect 32 0 10 0;
 #X connect 32 0 33 0;
 #X connect 33 0 3 0;
+#X connect 34 0 36 0;
+#X connect 35 0 41 0;
+#X connect 36 0 37 0;
+#X connect 36 1 38 0;
+#X connect 37 0 41 1;
+#X connect 38 0 39 0;
+#X connect 39 0 40 0;
+#X connect 40 0 41 1;
+#X connect 41 0 4 0;
+#X connect 42 0 35 0;
+#X connect 42 1 34 0;
 #X coords 0 -1 1 1 300 150 2 100 100;
