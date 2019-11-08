@@ -1,0 +1,3 @@
+#N canvas 9 74 1902 997 10;
+#X obj 138 143 oscillatormodule;
+#X obj 440 143 oscillatormodule;
